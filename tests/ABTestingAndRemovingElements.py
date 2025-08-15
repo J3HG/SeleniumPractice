@@ -17,4 +17,3 @@ class TestAB():
     def test_addDeleteBtn(self):
         homeInternetPage = HomeInternetPage(self.driver)
         addPage = homeInternetPage.addDeleteBtn()
-
