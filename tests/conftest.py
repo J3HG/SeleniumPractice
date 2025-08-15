@@ -24,3 +24,12 @@ def setUpDriver2(request):
     yield
     driver.quit()
 
+@pytest.fixture()
+def setUpDriverInternet(request):
+    service_obj = Service("C:\\Users\\mari_\\Downloads\\chromedriver-win64_current\\chromedriver-win64\\chromedriver.exe")
+    driver = webdriver.Chrome(service=service_obj)
+    driver.get("https://the-internet.herokuapp.com/")
+    driver.maximize_window()
+    request.cls.driver = driver
+    yield
+    driver.quit()
