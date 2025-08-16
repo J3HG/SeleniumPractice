@@ -1,5 +1,5 @@
 from selenium.webdriver.support.wait import WebDriverWait
-
+from faker import Faker
 from PageObjectModel.HomeInternetPage import HomeInternetPage
 from PageObjectModel.HomePage import HomePage
 import pytest
@@ -10,6 +10,7 @@ from selenium.webdriver.support import expected_conditions as EC
 
 @pytest.mark.usefixtures("setUpDriverInternet")
 class TestAB():
+    faker = Faker()
     def test_ABBtn(self):
         homeInternetPage = HomeInternetPage(self.driver)
         homeInternetPage.ABBtn().click()

@@ -16,6 +16,8 @@ class HomePage:
     locationsLocator = (By.LINK_TEXT, "Locations")
     adminPageLocator = (By.LINK_TEXT, "Admin Page")
     homePageLocator = (By.XPATH, "//a[text()='Home']")
+    payBillLocator = (By.XPATH, "//*[@id='leftPanel']/ul/li[4]/a")
+    forgotLogInLocator = (By.LINK_TEXT, "Forgot login info?")
 
     def registerBtn(self):
         return self.driver.find_element(*HomePage.registerBtnLocator)
@@ -46,3 +48,9 @@ class HomePage:
 
     def homePageBtn(self):
         return self.driver.find_element(*HomePage.homePageLocator).click()
+
+    def payBillBtn(self):
+        return self.driver.find_element(*HomePage.payBillLocator).click()
+
+    def forgotLoginInfoBtn(self):
+        return self.driver.find_element(*HomePage.forgotLogInLocator).click()
